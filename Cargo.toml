@@ -1,0 +1,26 @@
+[package]
+name = "{{project-name}}"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.58"
+description = "A short description of this package"
+documentation = "Path to Documentation"
+authors = ["{{authors}}"]
+#license = "MIT OR Apache-2.0"
+#license-file = "LICENSE.TXT"
+publish = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+sabaton-mw = { git = "https://github.com/sabaton-rs/sabaton-mw.git"}
+clap = { version= "3", features = ["cargo"]}
+tracing = "0.1"
+tokio = {version = "1", features = ["full"]}
+tracing-subscriber = "0.3"
+
+## Topics and Interfaces this Application depends on
+## Interfaces
+interface-example = { git = "https://github.com/sabaton-rs/interface-example.git", rev="3f7bb15a958bb6c43886d1d874eabc39cd0ecf28"}
+
+## Topics
