@@ -1,6 +1,6 @@
 <div align="center">
 
-# Template for a node that you can use with cargo-generate
+# Template for a Sabaton node that you can use with cargo-generate
 
 ## Documentation
 
