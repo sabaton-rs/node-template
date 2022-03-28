@@ -9,7 +9,6 @@ pub fn example_node_main() -> Result<(),MiddlewareError> {
 
     let node =   NodeBuilder::default()
         //.multi_threaded()  Enable this if you want a multi-threaded runtime
-        .with_namespace("namespace".into())
         //.with_num_workers(4)    // Number of work threads. Fixed to 1 for single threaded runtime.
         .build("example-node".to_owned()).expect("Node creation error");
 
