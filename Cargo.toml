@@ -24,3 +24,6 @@ tracing-subscriber = "0.3"
 interface-example = { git = "https://github.com/sabaton-rs/interface-example.git", rev="3f7bb15a958bb6c43886d1d874eabc39cd0ecf28"}
 
 ## Topics
+
+[profile.release]
+overflow-checks = true
