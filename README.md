@@ -1,5 +1,7 @@
 # Template for a Sabaton node that you can use with cargo-generate
 
+Uses sabaton-mw version 0.3.0.
+
 ## Documentation
 
 ## Quickstart
