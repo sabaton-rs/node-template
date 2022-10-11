@@ -5,12 +5,28 @@ use std::time::Duration;
 use sabaton_mw::{NodeBuilder, error::MiddlewareError};
 use tracing::{debug, info, span, Level};
 
-pub fn example_node_main() -> Result<(),MiddlewareError> {
+pub struct Params<'a> {
+    pub maybe_group: Option<&'a str>,
+    pub maybe_instance: Option<&'a str>,
+    /// add additional parameters here
+}
 
-    let node =   NodeBuilder::default()
+pub fn example_node_main(params: &Params) -> Result<(),MiddlewareError> {
+
+    let mut node_builder =   NodeBuilder::default();
+
         //.multi_threaded()  Enable this if you want a multi-threaded runtime
         //.with_num_workers(4)    // Number of work threads. Fixed to 1 for single threaded runtime.
-        .build("example-node".to_owned()).expect("Node creation error");
+
+    if let Some(group) = params.maybe_group {
+        node_builder = node_builder.with_group(group.into());
+    }
+
+    if let Some(instance) = params.maybe_instance {
+        node_builder = node_builder.with_instance(instance.into());
+    }
+
+    let node = node_builder.build("example-node".to_owned()).expect("Node creation error");
 
     let res = node.spin(|| {
         
