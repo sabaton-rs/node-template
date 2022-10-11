@@ -8,7 +8,7 @@ use tracing::{debug, info, span, Level};
 pub struct Params<'a> {
     pub maybe_group: Option<&'a str>,
     pub maybe_instance: Option<&'a str>,
-    /// add additional parameters here
+    // add additional parameters here
 }
 
 pub fn example_node_main(params: &Params) -> Result<(),MiddlewareError> {
