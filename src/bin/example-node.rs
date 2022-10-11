@@ -1,6 +1,6 @@
 #![forbid(unsafe_code)]
 use clap::{arg, command};
-use {{crate_name}}::example_node_main;
+use {{crate_name}}::{example_node_main,Params};
 use tracing::Level;
 fn main() {
     let matches = command!()
